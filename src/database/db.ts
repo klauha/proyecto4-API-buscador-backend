@@ -15,7 +15,7 @@ username: process.env.DB_USER|| "root",
 password:process.env.DB_PASSWORD|| "",
 database: process.env.DB_DATABASE||"test",
 entities: [],
-migrations:[Roles1708965513342,Users1708966181208,Services1708967708550],
+migrations:[Roles1708965513342,Users1708966181208,Services1708967708550,Appointments1708967237193],
 synchronize: false,
 logging: false,
 })
