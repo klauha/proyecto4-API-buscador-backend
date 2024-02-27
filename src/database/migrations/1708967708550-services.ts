@@ -17,12 +17,12 @@ export class Services1708967708550 implements MigrationInterface {
                     {
                         name: "services_name",
                         type: "varchar(255)",
-                       
+
                     },
                     {
                         name: "description",
                         type: "text",
-                       
+
                     },
 
                     {
