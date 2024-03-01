@@ -30,7 +30,7 @@ export class User extends BaseEntity {
     role!: Role;
 
     @OneToMany(()=> Appoinment, (appointment)=> appointment.user)
-    appointment!: Appoinment[];
+    appointments!: Appoinment[];
 
    
 }
