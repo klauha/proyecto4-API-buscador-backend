@@ -8,7 +8,7 @@ export class Service extends BaseEntity {
     id!: number
 
     @Column({ name: 'services_name' })
-    first_name!: string
+    serviceName!: string
 
     @Column({ name: 'description' })
     description!: string

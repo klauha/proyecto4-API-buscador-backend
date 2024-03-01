@@ -3,8 +3,8 @@ import "dotenv/config"
 import { DataSource } from "typeorm"
 import { Roles1708965513342 } from "./migrations/1708965513342-roles"
 import { Users1708966181208 } from "./migrations/1708966181208-users"
-import { Appointments1708967237193 } from "./migrations/1708967237193-appointments"
-import { Services1708967708550 } from "./migrations/1708967708550-services"
+import { Appointments1708967708550 } from "./migrations/1708967708550-appointments"
+import { Services1708967237193 } from "./migrations/1708967237193-services"
 
 
 export const AppDataSource = new DataSource({
@@ -18,8 +18,8 @@ entities: [],
 migrations:[
     Roles1708965513342,
     Users1708966181208,
-    Services1708967708550,
-    Appointments1708967237193
+    Services1708967237193,
+    Appointments1708967708550
 ],
 synchronize: false,
 logging: false,

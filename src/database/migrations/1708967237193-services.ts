@@ -1,11 +1,11 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class Appointments1708967237193 implements MigrationInterface {
+export class Services1708967237193 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "appointments",
+                name: "services",
                 columns: [
                     {
                         name: "id",
@@ -15,18 +15,16 @@ export class Appointments1708967237193 implements MigrationInterface {
                         generationStrategy: "increment",
                     },
                     {
-                        name: "appointment_date",
-                        type: "timestamp",
+                        name: "service_name",
+                        type: "varchar(255)",
                         isNullable: false
                     },
                     {
-                        name: "user_id",
-                        type: "int",
+                        name: "description",
+                        type: "text",
+
                     },
-                    {
-                        name: "service_id",
-                        type: "int",
-                    },
+
                     {
                         name: "created_at",
                         type: "timestamp",
@@ -40,27 +38,14 @@ export class Appointments1708967237193 implements MigrationInterface {
                     },
                 ],
 
-                foreignKeys: [
-                    {
-                        columnNames: ["user_id"],
-                        referencedTableName: "users",
-                        referencedColumnNames: ["id"],
-                        onDelete: "CASCADE",
-                    },
-                    {
-                        columnNames: ["service_id"],
-                        referencedTableName: "services",
-                        referencedColumnNames: ["id"],
-                        onDelete: "CASCADE",
-                    }
-                ],
+
             }),
             true
         );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("users");
+        await queryRunner.dropTable("services");
     }
 
 }
