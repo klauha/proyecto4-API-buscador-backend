@@ -16,20 +16,17 @@ export class Appointments1708967237193 implements MigrationInterface {
                     },
                     {
                         name: "appointment_date",
-                        type: "date",
-
+                        type: "timestamp",
+                        isNullable: false
                     },
-                    
                     {
                         name: "user_id",
                         type: "int",
                     },
-
                     {
                         name: "service_id",
                         type: "int",
                     },
-
                     {
                         name: "created_at",
                         type: "timestamp",
