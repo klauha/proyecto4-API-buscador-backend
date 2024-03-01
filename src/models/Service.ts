@@ -1,4 +1,5 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm"
+import { BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm"
+import { Appoinment } from "./Appoinment"
 
 @Entity("services")
 export class Service extends BaseEntity {
@@ -17,5 +18,9 @@ export class Service extends BaseEntity {
 
     @Column({ name: 'updated_at' })
     updatedAt!: Date
+
+
+    @OneToMany(()=> Appoinment, (appointment)=> appointment.service)
+    appointments!: Appoinment[];
 
 }
