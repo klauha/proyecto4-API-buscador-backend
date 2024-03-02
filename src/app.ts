@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import { createService } from "./controllers/serviceController";
+import { createService, getServices } from "./controllers/serviceController";
 
 dotenv.config()
 
@@ -22,3 +22,4 @@ app.get('/healthy', (req, res) => {
 
 // RUTAS SERVICES
 app.post('/api/services', createService)
+app.get('/api/services', getServices)
