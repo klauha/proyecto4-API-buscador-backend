@@ -1,6 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
-import { createService, getServices } from "./controllers/serviceController";
+import { createService, deleteServiceById, getServices, updateServiceById } from "./controllers/serviceController";
 
 dotenv.config()
 
@@ -23,3 +23,5 @@ app.get('/healthy', (req, res) => {
 // RUTAS SERVICES
 app.post('/api/services', createService)
 app.get('/api/services', getServices)
+app.delete('/api/services/:id', deleteServiceById)
+app.put('/api/services/:id', updateServiceById)
