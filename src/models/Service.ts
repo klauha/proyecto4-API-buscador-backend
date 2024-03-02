@@ -7,7 +7,7 @@ export class Service extends BaseEntity {
     @PrimaryGeneratedColumn()
     id!: number
 
-    @Column({ name: 'services_name' })
+    @Column({ name: 'service_name' })
     serviceName!: string
 
     @Column({ name: 'description' })
