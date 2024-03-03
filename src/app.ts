@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import { createService, deleteServiceById, getServices, updateServiceById } from "./controllers/serviceController";
+import { login, register } from "./controllers/auth";
 
 dotenv.config()
 
@@ -19,8 +20,11 @@ app.get('/healthy', (req, res) => {
         }
     )
 })
+// AUTH ROUTES:
+app.post ('/api/register', register)
+app.post ('/api/login', login)
 
-// RUTAS SERVICES
+// SERVICES ROUTES:
 app.post('/api/services', createService)
 app.get('/api/services', getServices)
 app.delete('/api/services/:id', deleteServiceById)
