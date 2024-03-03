@@ -9,7 +9,7 @@ export class Appoinment extends BaseEntity {
     id!: number
 
     @Column({ name: 'appointment_date' })
-    appointment_date!: string
+    appointmentDate!: Date
 
     @Column({ name: 'created_at' })
     createdAt!: Date
