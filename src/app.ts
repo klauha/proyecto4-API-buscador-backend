@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { createService, deleteServiceById, getServices, updateServiceById } from "./controllers/serviceController";
 import { login, register } from "./controllers/auth";
+import { auth } from "./middlewares/auth";
 
 dotenv.config()
 
@@ -25,7 +26,7 @@ app.post ('/api/register', register)
 app.post ('/api/login', login)
 
 // SERVICES ROUTES:
-app.post('/api/services', createService)
+app.post('/api/services', auth, createService)
 app.get('/api/services', getServices)
-app.delete('/api/services/:id', deleteServiceById)
-app.put('/api/services/:id', updateServiceById)
+app.delete('/api/services/:id',auth, deleteServiceById)
+app.put('/api/services/:id', auth,updateServiceById)
