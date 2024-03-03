@@ -28,7 +28,7 @@ export const createService = async (req: Request, res: Response) => {
             }
         ).save()
 
-        res.status(200).json({
+        res.status(201).json({
             success: true,
             message: "service created successfully",
             data: newService
