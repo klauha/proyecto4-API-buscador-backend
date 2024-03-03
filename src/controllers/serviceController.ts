@@ -58,12 +58,13 @@ export const getServices = async (req: Request, res: Response) => {
                 }
             }
         )
+
         res.status(200).json({
             suceess: true,
             message: "services retrieved successfully",
             data: services
-
         })
+        
     } catch (error) {
         res.status(500).json({
             success: false,
@@ -115,10 +116,10 @@ export const updateServiceById = async (req: Request, res: Response) => {
     // / recuperar info por parámetro
     try {
         const serviceId = req.params.id
-        const serviceName= req.body.serviceName
-        const description=req.body.description
+        const serviceName = req.body.serviceName
+        const description = req.body.description
         console.log(description);
-        
+
 
         const serviceToUpdate: any = await Service.findOneBy({
             id: parseInt(serviceId)
@@ -133,7 +134,7 @@ export const updateServiceById = async (req: Request, res: Response) => {
         }
         // actualizar datos en bd
         const serviceUpdated = await Service.update(
-         
+
             {
                 id: parseInt(serviceId)
             },
