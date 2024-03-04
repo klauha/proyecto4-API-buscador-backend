@@ -4,7 +4,7 @@ import { createService, deleteServiceById, getServices, updateServiceById } from
 import { login, register } from "./controllers/authController";
 import { auth } from "./middlewares/auth";
 import { getProfile, getUsers } from "./controllers/userController";
-import { createAppoinment, getMyAppoinments } from "./controllers/appointmentController";
+import { createAppoinment, getAppointmentById, getMyAppoinments, updateAppoinmentById } from "./controllers/appointmentController";
 
 dotenv.config()
 
@@ -39,6 +39,7 @@ app.get ('/api/users/profile',getProfile)
 
 // APPOINMENTS ROUTES
 
-app.post ('/api/appoinments',auth, createAppoinment)
-// app.get ('/api/appoinments/:id', getAppointmentById)
-app.get ('/api/appoinments', auth, getMyAppoinments)
+app.post ('/api/appointments',auth, createAppoinment)
+app.get ('/api/appointments/:id',auth, getAppointmentById)
+app.get ('/api/appointments', auth, getMyAppoinments)
+app.put('/api/appointments/:id', auth, updateAppoinmentById)
