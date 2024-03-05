@@ -159,7 +159,7 @@ const appointmentsSeedDatabase = async () => {
     appointment1.service = new Service()
     appointment1.service.id = 1
     appointment1.appointmentDate = new Date("2024-04-03");
-    appointment1.save()
+    await appointment1.save()
 
     const appointment2 = new Appoinment();
     appointment2.user = new User()
@@ -167,7 +167,7 @@ const appointmentsSeedDatabase = async () => {
     appointment2.service = new Service()
     appointment2.service.id = 2
     appointment2.appointmentDate = new Date("2024-05-03");
-    appointment2.save()
+    await appointment2.save()
 
     const appointment3 = new Appoinment();
     appointment3.user = new User()
@@ -175,7 +175,7 @@ const appointmentsSeedDatabase = async () => {
     appointment3.service = new Service()
     appointment3.service.id = 4
     appointment3.appointmentDate = new Date("2024-03-28");
-    appointment3.save()
+    await appointment3.save()
 
     const appointment4 = new Appoinment();
     appointment4.user = new User()
@@ -183,7 +183,7 @@ const appointmentsSeedDatabase = async () => {
     appointment4.service = new Service()
     appointment4.service.id = 3
     appointment4.appointmentDate = new Date("2024-03-18");
-    appointment4.save()
+    await appointment4.save()
 
     const appointment5 = new Appoinment();
     appointment5.user = new User()
@@ -191,7 +191,7 @@ const appointmentsSeedDatabase = async () => {
     appointment5.service = new Service()
     appointment5.service.id = 5
     appointment5.appointmentDate = new Date("2024-05-03");
-    appointment5.save()
+    await appointment5.save()
 
     const appointment6 = new Appoinment();
     appointment6.user = new User()
@@ -199,7 +199,7 @@ const appointmentsSeedDatabase = async () => {
     appointment6.service = new Service()
     appointment6.service.id = 4
     appointment6.appointmentDate = new Date("2024-10-04");
-    appointment6.save()
+    await appointment6.save()
 
     const appointment7 = new Appoinment();
     appointment7.user = new User()
@@ -207,7 +207,7 @@ const appointmentsSeedDatabase = async () => {
     appointment7.service = new Service()
     appointment7.service.id = 2
     appointment7.appointmentDate = new Date("2024-05-14");
-    appointment7.save()
+    await appointment7.save()
 
     const appointment8 = new Appoinment();
     appointment8.user = new User()
@@ -215,7 +215,7 @@ const appointmentsSeedDatabase = async () => {
     appointment8.service = new Service()
     appointment8.service.id = 3
     appointment8.appointmentDate = new Date("2024-05-04");
-    appointment8.save()
+    await appointment8.save()
 
     const appointment9 = new Appoinment();
     appointment9.user = new User()
@@ -223,7 +223,7 @@ const appointmentsSeedDatabase = async () => {
     appointment9.service = new Service()
     appointment9.service.id = 1
     appointment9.appointmentDate = new Date("2024-10-04");
-    appointment9.save()
+    await appointment9.save()
 
     const appointment10 = new Appoinment();
     appointment10.user = new User()
@@ -231,7 +231,7 @@ const appointmentsSeedDatabase = async () => {
     appointment10.service = new Service()
     appointment10.service.id = 2
     appointment10.appointmentDate = new Date("2024-04-04");
-    appointment10.save()
+    await appointment10.save()
 
     const appointment11 = new Appoinment();
     appointment11.user = new User()
@@ -239,7 +239,7 @@ const appointmentsSeedDatabase = async () => {
     appointment11.service = new Service()
     appointment11.service.id = 3
     appointment11.appointmentDate = new Date("2024-06-02");
-    appointment11.save()
+    await appointment11.save()
 
     const appointment12 = new Appoinment();
     appointment12.user = new User()
@@ -247,7 +247,7 @@ const appointmentsSeedDatabase = async () => {
     appointment12.service = new Service()
     appointment12.service.id = 2
     appointment12.appointmentDate = new Date("2024-05-05");
-    appointment12.save()
+    await appointment12.save()
 
     const appointment13 = new Appoinment();
     appointment13.user = new User()
@@ -255,7 +255,7 @@ const appointmentsSeedDatabase = async () => {
     appointment13.service = new Service()
     appointment13.service.id = 4
     appointment13.appointmentDate = new Date("2024-11-04");
-    appointment13.save()
+    await appointment13.save()
     
     const appointment14 = new Appoinment();
     appointment14.user = new User()
@@ -263,7 +263,7 @@ const appointmentsSeedDatabase = async () => {
     appointment14.service = new Service()
     appointment14.service.id = 3
     appointment14.appointmentDate = new Date("2024-12-04");
-    appointment14.save()
+    await appointment14.save()
 
     const appointment15 = new Appoinment();
     appointment15.user = new User()
@@ -271,7 +271,7 @@ const appointmentsSeedDatabase = async () => {
     appointment15.service = new Service()
     appointment15.service.id = 2
     appointment15.appointmentDate = new Date("2024-09-21");
-    appointment15.save()
+    await appointment15.save()
 
     console.log('------------------------------------------');
     console.log('Las citas se han guardado correctamente');    
@@ -285,9 +285,9 @@ const appointmentsSeedDatabase = async () => {
 }
  
 const launchSeeder = async () => {
-  await roleSeedDatabase();
-  await userSeedDatabase();
-  await serviceSeedDatabase()
+  // await roleSeedDatabase();
+  // await userSeedDatabase();
+  // await serviceSeedDatabase()
   await appointmentsSeedDatabase()
 }
 

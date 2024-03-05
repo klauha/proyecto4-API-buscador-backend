@@ -27,22 +27,22 @@ app.get('/healthy', (req, res) => {
 
 
 // AUTH ROUTES:
-app.post ('/api/auth/registerregister',register)
-app.post ('/api/auth/login', login)
+app.post('/api/auth/registerregister', register)
+app.post('/api/auth/login', login)
 
 // SERVICES ROUTES:
-app.post('/api/services',auth,isSuperAdmin, createService)
+app.post('/api/services', auth, isSuperAdmin, createService)
 app.get('/api/services', getServices)
-app.delete('/api/services/:id',auth,isSuperAdmin, deleteServiceById)
-app.put('/api/services/:id', auth,isSuperAdmin,updateServiceById)
+app.delete('/api/services/:id', auth, isSuperAdmin, deleteServiceById)
+app.put('/api/services/:id', auth, isSuperAdmin, updateServiceById)
 
 // USERS ROUTES
-app.get('/api/users',auth,isSuperAdmin, getUsers)
-app.get ('/api/users/profile',auth,getProfile)
-app.put('/api/users/profile',auth, updateUserById)
+app.get('/api/users', auth, isSuperAdmin, getUsers)
+app.get('/api/users/profile', auth, getProfile)
+app.put('/api/users/profile', auth, updateUserById)
 
 // APPOINMENTS ROUTES
-app.post ('/api/appointments',auth, createAppointment)
-app.get ('/api/appointments/:id',auth, getAppointmentById)
-app.get ('/api/appointments', auth, getMyAppointments)
+app.post('/api/appointments', auth, createAppointment)
+app.get('/api/appointments/:id', auth, getAppointmentById)
+app.get('/api/appointments', auth, getMyAppointments)
 app.put('/api/appointments/:id', auth, updateAppointmentById)

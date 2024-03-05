@@ -11,8 +11,8 @@ export const register = async (req: Request, res: Response) => {
 
         const email = req.body.email
         const password = req.body.password
-        const firstName = req.body.first_name
-        const lastName = req.body.last_name
+        // const firstName = req.body.first_name
+        // const lastName = req.body.last_name
 
         // validamos datos
 
@@ -42,8 +42,8 @@ export const register = async (req: Request, res: Response) => {
         const newUser = await User.create({
             email: email,
             password: passwordEncrypted,
-            first_name: firstName,
-            last_name: lastName
+            // first_name: firstName,
+            // last_name: lastName
 
         }).save()
 
