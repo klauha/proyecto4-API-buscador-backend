@@ -2,24 +2,24 @@ import { Request, Response } from "express"
 import { Appoinment } from "../models/Appoinment"
 import { app } from "../app"
 
-// CREATE APPOINMENT--------------------------
+// CREATE APPOINTMENT--------------------------
 
-export const createAppoinment = async (req: Request, res: Response) => {
+export const createAppointment = async (req: Request, res: Response) => {
     // Recuperar la info
     try {
         const userId = req.tokenData.userId
         const serviceId = req.body.serviceId
-        const appoinmentDate = req.body.appoinmentDate
+        const appointmentDate = req.body.appointmentDate
 
-        if (!serviceId || !appoinmentDate) {
+        if (!serviceId || !appointmentDate) {
             return res.status(400).json({
                 success: false,
                 message: "Service ID and date are needed",
             })
         }
-        const newAppoinment = await Appoinment.create(
+        const newAppointment = await Appoinment.create(
             {
-                appointmentDate: appoinmentDate,
+                appointmentDate: appointmentDate,
                 user: {
                     id: userId
                 },
@@ -31,14 +31,14 @@ export const createAppoinment = async (req: Request, res: Response) => {
 
         res.status(201).json({
             success: true,
-            message: "Appoinment created successfully",
-            data: newAppoinment
+            message: "Appointment created successfully",
+            data: newAppointment
         })
 
     } catch (error: any) {
         res.status(500).json({
             success: false,
-            message: "Appoinment can't be created",
+            message: "Appointment can't be created",
             error: error.message
         })
     }
@@ -50,12 +50,12 @@ export const createAppoinment = async (req: Request, res: Response) => {
 export const getAppointmentById = async (req: Request, res: Response) => {
     try {
         const userId = req.tokenData.userId
-        const appoinmentId = req.params.id
+        const appointmentId = req.params.id
 
-        const appoinmentFound = await Appoinment.findOne(
+        const appointmentFound = await Appoinment.findOne(
             {
                 where: {
-                    id: parseInt(appoinmentId),
+                    id: parseInt(appointmentId),
                     user: {
                         id: userId
                     }
@@ -66,11 +66,11 @@ export const getAppointmentById = async (req: Request, res: Response) => {
             }
         )
 
-        if (!appoinmentFound) {
+        if (!appointmentFound) {
             res.status(404).json(
                 {
                     success: false,
-                    message: "appoinment not found"
+                    message: "appointment not found"
                 }
             )
         }
@@ -78,13 +78,13 @@ export const getAppointmentById = async (req: Request, res: Response) => {
         res.status(200).json({
             suceess: true,
             message: "Appointmen retrieved successfully",
-            data: appoinmentFound
+            data: appointmentFound
         })
 
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: "Appoinment cant be retrieved",
+            message: "Appointment cant be retrieved",
             error: error
         })
     }
@@ -93,7 +93,7 @@ export const getAppointmentById = async (req: Request, res: Response) => {
 
 // RECUPERAR MIS CITAS
 
-export const getMyAppoinments = async (req: Request, res: Response) => {
+export const getMyAppointments = async (req: Request, res: Response) => {
     console.log(req.tokenData);
 
     try {
@@ -110,6 +110,14 @@ export const getMyAppoinments = async (req: Request, res: Response) => {
                 service: true
             }
         })
+        if (!myAppointments) {
+            res.status(404).json(
+                {
+                    success: false,
+                    message: "appointments not found"
+                }
+            )
+        }
 
         res.status(200).json(
             {
@@ -124,7 +132,7 @@ export const getMyAppoinments = async (req: Request, res: Response) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            message: "apointments can't be retrieved",
+            message: "Apointments can't be retrieved",
         }
         )
     }
@@ -132,16 +140,16 @@ export const getMyAppoinments = async (req: Request, res: Response) => {
 
 // MODIFICAR CITA
 
-export const updateAppoinmentById = async (req: Request, res: Response) => {
+export const updateAppointmentById = async (req: Request, res: Response) => {
     try {
-        const appoinmentId = req.params.id
+        const appointmentId = req.params.id
         const serviceId = req.body.serviceId
-        const appoinmentDate = req.body.appoinmentDate
+        const appointmentDate = req.body.appoinTmentDate
 
-        const appoinmentToUpdate = await Appoinment.findOne(
+        const appointmentToUpdate = await Appoinment.findOne(
             {
                 where: {
-                    id: parseInt(appoinmentId),
+                    id: parseInt(appointmentId),
                     user: {
                         id: req.tokenData.userId
                     }
@@ -149,7 +157,7 @@ export const updateAppoinmentById = async (req: Request, res: Response) => {
             }
         )
 
-        if(!appoinmentToUpdate) {
+        if(!appointmentToUpdate) {
             return res.status(404).json({
                 success: false,
                 messagge: "appointment not found",
@@ -158,13 +166,13 @@ export const updateAppoinmentById = async (req: Request, res: Response) => {
 
         const appointmentUpdated = await Appoinment.update(
             {
-                id: parseInt(appoinmentId)
+                id: parseInt(appointmentId)
             },
             {
                 service: {
                     id: parseInt(serviceId)
                 },
-                appointmentDate: appoinmentDate
+                appointmentDate: appointmentDate
             }
         )
         res.status(200).json({
@@ -176,7 +184,7 @@ export const updateAppoinmentById = async (req: Request, res: Response) => {
     } catch (error) {
         res.status(500).json({
             success: false,
-            messagge: "Appoinment can't be  updated",
+            messagge: "Appointment can't be  updated",
             error: error
         })
 
