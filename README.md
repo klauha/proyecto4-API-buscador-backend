@@ -111,17 +111,17 @@ Nota: Es necesario tener instalado [![NodeJS](https://img.shields.io/badge/node.
 
     El usuario puede ver todas las citas que tiene creadas
 
-- SERVICES
+-SERVICES
 
-    - GET
+    -GET
 
             GET http://localhost:4000/api/services
 
-    - POST SERVICE
+    -POST SERVICE
 
             POST http://localhost:4000/api/services
 
-    El usuario tiene que ser super_admin para crear servicios del estudio
+            El usuario tiene que ser super_admin para crear servicios del estudio
 
     -UPDATE SERVICE
 
