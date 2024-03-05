@@ -37,6 +37,7 @@ Nota: Es necesario tener instalado [![NodeJS](https://img.shields.io/badge/node.
 <details>
 <summary> Endpoints </summary>
 - AUTH
+
     - REGISTER
 
             POST http://localhost:4000/api/auth/register
@@ -57,6 +58,7 @@ Nota: Es necesario tener instalado [![NodeJS](https://img.shields.io/badge/node.
                 "password": "123456"
             }
             - USERS
+-USERS
 
     -GET
              GET http://localhost:4000/api/users
@@ -83,7 +85,7 @@ Nota: Es necesario tener instalado [![NodeJS](https://img.shields.io/badge/node.
             }
 
 
--APOINMENTS
+-APPOINTMENTS
 
 
     - CREATE APPOINTMENT
@@ -109,7 +111,7 @@ Nota: Es necesario tener instalado [![NodeJS](https://img.shields.io/badge/node.
 
     El usuario puede ver todas las citas que tiene creadas
 
-    - SERVICES
+- SERVICES
 
     - GET
 
