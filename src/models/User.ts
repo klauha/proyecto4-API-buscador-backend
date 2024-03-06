@@ -16,7 +16,7 @@ export class User extends BaseEntity {
     @Column({ name: 'email' })
     email!: string
 
-    @Column({ name: 'password', select:false })
+    @Column({ name: 'password', select: false })
     password!: string
 
     @Column({ name: 'created_at' })
@@ -29,8 +29,8 @@ export class User extends BaseEntity {
     @JoinColumn({ name: "role_id" })
     role!: Role;
 
-    @OneToMany(()=> Appoinment, (appointment)=> appointment.user)
+    @OneToMany(() => Appoinment, (appointment) => appointment.user)
     appointments!: Appoinment[];
 
-   
+
 }

@@ -66,7 +66,7 @@ export const updateUserById = async (req: Request, res: Response) => {
     try {
         const userId = req.tokenData.userId
         const firstName = req.body.firstName
-        const lastName= req.body.firstName
+        const lastName = req.body.firstName
 
         const userToUpdate = await User.findOne(
             {
@@ -89,8 +89,8 @@ export const updateUserById = async (req: Request, res: Response) => {
                 id: userId
             },
             {
-                first_name:firstName,
-                last_name:lastName
+                first_name: firstName,
+                last_name: lastName
             }
         )
         res.status(200).json({

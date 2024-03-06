@@ -29,7 +29,7 @@ Nota: Es necesario tener instalado [![NodeJS](https://img.shields.io/badge/node.
 1. Clonar el repositorio con el comando`$ git clone [URL del repositorio]`
 2. Instalar dependencias con el comando` $ npm install `
 3. Conectamos nuestro repositorio con nuestra base de datos, en el archivo ".env.example" tenemos un ejemplo, quitamos el ".example" y el archivo deberia quedar ".env", sustituimos valores con las credenciales de nuestra base de datos. El ultimo valor, seria el secreto de nuestro token.
-4. Ejecutamos las migraciones con el comando`$ npm run migrations`
+4. Ejecutamos las migraciones con el comando`$ npm run run-migrations`
 5. Ejecutamos los seeders `$ npm run seeder`
 6. Ponemos en funcionamiento el servidor `$ npm run dev`
 

@@ -9,7 +9,7 @@ import { Appoinment } from "../../models/Appoinment";
 const roleSeedDatabase = async () => {
   try {
     await AppDataSource.initialize();
-    
+
     const roleUser = new Role();
     roleUser.id = 1;
     roleUser.name = "user"
@@ -26,8 +26,8 @@ const roleSeedDatabase = async () => {
     await roleSuperAdmin.save();
 
     console.log('---------------------------------------');
-    console.log('Los roles se han guardado correctamente');    
-    console.log('---------------------------------------');    
+    console.log('Los roles se han guardado correctamente');
+    console.log('---------------------------------------');
   } catch (error) {
     console.log(error);
   } finally {
@@ -42,21 +42,21 @@ const userSeedDatabase = async () => {
     const user = new User();
     user.first_name = "user"
     user.email = "user@user.com"
-    
+
     user.role = new Role();
     user.role.id = 1
 
-    user.password = bcrypt.hashSync("123456", 6) 
+    user.password = bcrypt.hashSync("123456", 6)
     await user.save();
 
     const userAdmin = new User();
     userAdmin.first_name = "admin"
     userAdmin.email = "admin@admin.com"
-    
+
     userAdmin.role = new Role();
     userAdmin.role.id = 2
 
-    userAdmin.password = bcrypt.hashSync("123456", 6) 
+    userAdmin.password = bcrypt.hashSync("123456", 6)
     await userAdmin.save();
 
     const userSuperAdmin = new User();
@@ -64,33 +64,33 @@ const userSeedDatabase = async () => {
     userSuperAdmin.email = "superadmin@superadmin.com"
     userSuperAdmin.role = new Role();
     userSuperAdmin.role.id = 3
-    userSuperAdmin.password = bcrypt.hashSync("123456", 6) 
+    userSuperAdmin.password = bcrypt.hashSync("123456", 6)
     await userSuperAdmin.save();
 
     const paola = new User();
     paola.first_name = "paola"
     paola.email = "paola@paola.com"
-    
+
     paola.role = new Role();
     paola.role.id = 1
 
-    paola.password = bcrypt.hashSync("123456", 6) 
+    paola.password = bcrypt.hashSync("123456", 6)
     await paola.save();
 
     const sofia = new User();
     sofia.first_name = "sofia"
     sofia.email = "sofia@sofia.com"
-    
+
     sofia.role = new Role();
     sofia.role.id = 1
 
-    sofia.password = bcrypt.hashSync("123456", 6) 
+    sofia.password = bcrypt.hashSync("123456", 6)
     await sofia.save();
 
     const toni = new User();
     toni.first_name = "toni"
     toni.email = "toni@toni.com"
-    
+
     toni.role = new Role();
     toni.role.id = 1
 
@@ -98,8 +98,8 @@ const userSeedDatabase = async () => {
     await toni.save();
 
     console.log('------------------------------------------');
-    console.log('Los usuarios se han guardado correctamente');    
-    console.log('------------------------------------------');  
+    console.log('Los usuarios se han guardado correctamente');
+    console.log('------------------------------------------');
 
   } catch (error) {
     console.log(error);
@@ -138,8 +138,8 @@ const serviceSeedDatabase = async () => {
     await service5.save()
 
     console.log('------------------------------------------');
-    console.log('Los servicios se han guardado correctamente');    
-    console.log('------------------------------------------');  
+    console.log('Los servicios se han guardado correctamente');
+    console.log('------------------------------------------');
 
   } catch (error) {
     console.log(error);
@@ -256,7 +256,7 @@ const appointmentsSeedDatabase = async () => {
     appointment13.service.id = 4
     appointment13.appointmentDate = new Date("2024-11-04");
     await appointment13.save()
-    
+
     const appointment14 = new Appoinment();
     appointment14.user = new User()
     appointment14.user.id = 5;
@@ -274,8 +274,8 @@ const appointmentsSeedDatabase = async () => {
     await appointment15.save()
 
     console.log('------------------------------------------');
-    console.log('Las citas se han guardado correctamente');    
-    console.log('------------------------------------------');  
+    console.log('Las citas se han guardado correctamente');
+    console.log('------------------------------------------');
 
   } catch (error) {
     console.log(error);
@@ -283,11 +283,11 @@ const appointmentsSeedDatabase = async () => {
     await AppDataSource.destroy()
   }
 }
- 
+
 const launchSeeder = async () => {
-  // await roleSeedDatabase();
-  // await userSeedDatabase();
-  // await serviceSeedDatabase()
+  await roleSeedDatabase();
+  await userSeedDatabase();
+  await serviceSeedDatabase()
   await appointmentsSeedDatabase()
 }
 
