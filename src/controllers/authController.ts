@@ -70,10 +70,10 @@ export const login = async (req: Request, res: Response) => {
 
         const email = req.body.email;
         const password = req.body.password;
-        
+
         console.log("123");
-    
-        
+
+
         // validacion de email password
 
         if (!email || !password) {
@@ -101,8 +101,8 @@ export const login = async (req: Request, res: Response) => {
                 }
             }
         )
-     console.log(user);
-     
+        console.log(user);
+
         if (!user) {
             return res.status(400).json({
                 success: false,
@@ -119,7 +119,7 @@ export const login = async (req: Request, res: Response) => {
             })
         }
         console.log(100);
-        
+
         const token = jwt.sign(
             {
                 userId: user.id,
@@ -129,11 +129,11 @@ export const login = async (req: Request, res: Response) => {
             {
                 expiresIn: "2h"
             }
-            
+
         )
-       
+
         console.log(112);
-        
+
 
         res.status(200).json({
             success: true,
@@ -144,7 +144,7 @@ export const login = async (req: Request, res: Response) => {
 
 
 
-    } catch (error:any) {
+    } catch (error: any) {
         res.status(500).json({
             success: false,
             message: "user cant be logged",

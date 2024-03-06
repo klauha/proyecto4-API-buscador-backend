@@ -13,7 +13,7 @@ export class Roles1708965513342 implements MigrationInterface {
                         isPrimary: true,
                         isGenerated: true,
                         generationStrategy: "increment",
-                        
+
                     },
                     {
                         name: "title",

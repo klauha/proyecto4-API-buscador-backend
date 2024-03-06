@@ -64,7 +64,7 @@ export const getServices = async (req: Request, res: Response) => {
             message: "services retrieved successfully",
             data: services
         })
-        
+
     } catch (error) {
         res.status(500).json({
             success: false,

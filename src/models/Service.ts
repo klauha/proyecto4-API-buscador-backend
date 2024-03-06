@@ -20,7 +20,7 @@ export class Service extends BaseEntity {
     updatedAt!: Date
 
 
-    @OneToMany(()=> Appoinment, (appointment)=> appointment.service)
+    @OneToMany(() => Appoinment, (appointment) => appointment.service)
     appointments!: Appoinment[];
 
 }

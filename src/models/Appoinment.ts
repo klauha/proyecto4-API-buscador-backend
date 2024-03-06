@@ -4,7 +4,7 @@ import { Service } from "./Service"
 
 @Entity("appointments")
 export class Appoinment extends BaseEntity {
-    
+
     @PrimaryGeneratedColumn()
     id!: number
 
