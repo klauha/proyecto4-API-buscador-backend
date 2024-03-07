@@ -27,7 +27,7 @@ app.get('/healthy', (req, res) => {
 
 
 // AUTH ROUTES:
-app.post('/api/auth/registerregister', register)
+app.post('/api/auth/register', register)
 app.post('/api/auth/login', login)
 
 // SERVICES ROUTES:
