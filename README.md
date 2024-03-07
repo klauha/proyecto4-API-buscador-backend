@@ -47,7 +47,7 @@ Nota: Es necesario tener instalado [![NodeJS](https://img.shields.io/badge/node.
                 "password": "123456"
                 
             }
-
+    La contraseña debe tener 6 carácteres
         
     - LOGIN
 
@@ -57,7 +57,15 @@ Nota: Es necesario tener instalado [![NodeJS](https://img.shields.io/badge/node.
                 "email": "paola@paola.com",
                 "password": "123456"
             }
-            - USERS
+
+        Usuarios creados:
+        SUPERADMIN:
+        email: superadmin@superadmin.com
+        password: 123456
+        ADMIN: 
+        email: admin@admin.com
+        password: 123456
+
 -USERS
 
     -GET
