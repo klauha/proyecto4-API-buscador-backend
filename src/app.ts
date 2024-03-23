@@ -6,10 +6,14 @@ import { auth } from "./middlewares/auth";
 import { getProfile, getUsers, updateUserById } from "./controllers/userController";
 import { createAppointment, getAppointmentById, getMyAppointments, updateAppointmentById } from "./controllers/appointmentController";
 import { isSuperAdmin } from "./middlewares/isSuperAdmin";
+import cors from "cors";
 
 dotenv.config()
 
 export const app = express()
+
+// use cors
+app.use(cors())
 
 app.use(express.json())
 
