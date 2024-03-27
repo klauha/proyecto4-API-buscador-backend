@@ -113,28 +113,33 @@ const serviceSeedDatabase = async () => {
     await AppDataSource.initialize();
 
     const service1 = new Service();
-    service1.serviceName = "Tatuajes del cátalogo"
-    service1.description = "Los clientes tendrán la libertad de seleccionar motivos y diseños únicos, personalizando completamente su experiencia de tatuaje de acuerdo a sus preferencias y gustos."
+    service1.serviceName = "Tatuajes"
+    service1.description = "Realizamos todo tipo de tatuajes, puedes elegir de nuestro cátalogo o te diseñamos lo que desees."
+    service1.urlImg= "https://nirmedia.com/wp-content/uploads/2022/07/tatuador.jpg"
     await service1.save()
 
     const service2 = new Service();
-    service2.serviceName = "Tatuajes del cátalogo"
-    service2.description = "Ofrecemos la realización de tatuajes basados en diseños predefinidos en nuestro catálogo. Los clientes pueden elegir entre una variedad de opciones estilizadas y probadas."
+    service2.serviceName = "Restauración de tatuajes"
+    service2.description = "En la restauración de tatuajes se puede retocar el tattoo, colocando más tinta, devolviéndole la intensidad al color, resaltando los tonos y su brillo."
+    service2.urlImg= "https://cadenaser.com/resizer/Ixs5tF0u1lD50NYpKWhxUGER9Ac=/650x488/filters:format(jpg):quality(70)/cloudfront-eu-central-1.images.arcpublishing.com/prisaradio/W34HIPJXHJCGBB7ZEBH5ONGSIA.jpg"
     await service2.save()
 
     const service3 = new Service();
-    service3.serviceName = "Restauración y rejuvenecimiento de trabajos"
-    service3.description = "Ofrecemos la realización de tatuajes basados en diseños predefinidos en nuestro catálogo. Los clientes pueden elegir entre una variedad de opciones estilizadas y probadas."
+    service3.serviceName = "Tapado de tatto"
+    service3.description = "Si tienes cicatrices de operaciones, estrías, quemaduras o manchas en tu piel que quieras minimizar a la vista, realizamos bellos tatuajes con el estilo de tu preferencia, que oculten esa zona y decoren artísticamente tu cuerpo."
+    service3.urlImg= "https://elpais.com/elpais/2017/05/12/album/1494576279_555839.html"
     await service3.save()
 
     const service4 = new Service();
-    service4.serviceName = "Colocación de piercings y dilatadores"
-    service4.description = "Ofrecemos servicios profesionales para la colocación de piercings y dilatadores. Nuestro equipo garantiza procedimientos seguros y estilos variados para satisfacer las preferencias individuales de nuestros clientes."
+    service4.serviceName = "Piercings"
+    service4.description = "Ofrecemos servicios profesionales para la colocación de piercings y dilatadores."
+    service4.urlImg= "https://www.thesun.co.uk/wp-content/uploads/2023/01/newspress-collage-21125861-1674385652453.jpg?w=620"
     await service4.save()
 
     const service5 = new Service();
-    service5.serviceName = "Venta de piercings y otros artículos"
-    service5.description = "Además de nuestros servicios de aplicación, ofrecemos una selección de piercings y otros artículos relacionados con el arte corporal. Los clientes pueden adquirir productos de calidad para complementar su estilo único."
+    service5.serviceName = "Laser Tatoo"
+    service5.description = "Ofrecemos la última tecnología de ZIMMER AESTHETICS, BISON MEDICAL y QUANTA SYSTEM en eliminación de tatuajes láser."
+    service5.urlImg = "https://theobjective.com/wp-content/uploads/2023/06/WhatsApp-Image-2023-06-13-at-10.46.42.jpg"
     await service5.save()
 
     console.log('------------------------------------------');
