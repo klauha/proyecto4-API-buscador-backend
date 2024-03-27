@@ -13,6 +13,9 @@ export class Service extends BaseEntity {
     @Column({ name: 'description' })
     description!: string
 
+    @Column({ name: 'url_img' })
+    urlImg!: string
+
     @Column({ name: 'created_at' })
     createdAt!: Date
 

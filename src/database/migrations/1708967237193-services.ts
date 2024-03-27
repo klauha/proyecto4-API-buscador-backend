@@ -24,7 +24,11 @@ export class Services1708967237193 implements MigrationInterface {
                         type: "text",
 
                     },
+                    {
+                        name: "url_img",
+                        type: "text",
 
+                    },
                     {
                         name: "created_at",
                         type: "timestamp",
