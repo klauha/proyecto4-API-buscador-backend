@@ -190,3 +190,33 @@ export const updateAppointmentById = async (req: Request, res: Response) => {
 
     }
 }
+// DELETE CITA
+export const deleteAppointment = async (req: Request, res: Response) => {
+    try {
+        const appointmentId = req.params.id
+        const appointmentToRemove: any = await Appoinment.findOneBy(
+            {
+                id: parseInt(appointmentId)
+            }
+        )
+            
+            
+        const appointmentDeleted = await Appoinment.remove(appointmentToRemove)
+
+        res.status(200).json({
+            success: true,
+            messagge: "Appointment deleted",
+            data: appointmentDeleted
+        })
+        
+
+} catch (error) {
+    res.status(500).json({
+        success: false,
+        messagge: "Appointment can't be  deleted",
+        error: error
+
+    })
+
+}
+}
