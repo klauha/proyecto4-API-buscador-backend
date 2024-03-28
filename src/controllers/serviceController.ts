@@ -53,6 +53,7 @@ export const getServices = async (req: Request, res: Response) => {
                     id: true,
                     serviceName: true,
                     description: true,
+                    urlImg:true,
                     createdAt: true,
                     updatedAt: true,
                 }
