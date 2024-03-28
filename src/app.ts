@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import { createService, deleteServiceById, getServices, updateServiceById } from "./controllers/serviceController";
 import { login, register } from "./controllers/authController";
 import { auth } from "./middlewares/auth";
-import { getProfile, getUsers, updateUserById } from "./controllers/userController";
+import { deleteUser, getProfile, getUsers, updateUserById } from "./controllers/userController";
 import { createAppointment, getAppointmentById, getMyAppointments, updateAppointmentById } from "./controllers/appointmentController";
 import { isSuperAdmin } from "./middlewares/isSuperAdmin";
 import cors from "cors";
@@ -44,6 +44,7 @@ app.put('/api/services/:id', auth, isSuperAdmin, updateServiceById)
 app.get('/api/users', auth, isSuperAdmin, getUsers)
 app.get('/api/users/profile', auth, getProfile)
 app.put('/api/users/profile', auth, updateUserById)
+app.delete('/api/users/:id', auth, isSuperAdmin, deleteUser )
 
 // APPOINMENTS ROUTES
 app.post('/api/appointments', auth, createAppointment)

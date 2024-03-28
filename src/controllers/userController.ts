@@ -108,3 +108,33 @@ export const updateUserById = async (req: Request, res: Response) => {
 
     }
 }
+// DELETE USER
+export const deleteUser = async (req: Request, res: Response) => {
+    try {
+        const userId = req.params.id
+        const userToRemove: any = await User.findOneBy(
+            {
+                    id: parseInt(userId),
+            }
+        )
+            
+            
+        const userDeleted = await User.remove(userToRemove)
+
+        res.status(200).json({
+            success: true,
+            messagge: "user deleteddd",
+            data: userDeleted
+        })
+        
+
+} catch (error) {
+    res.status(500).json({
+        success: false,
+        messagge: "User can't be  deleted",
+        error: error
+
+    })
+
+}
+}
